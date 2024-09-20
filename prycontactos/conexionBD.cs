@@ -33,7 +33,10 @@ namespace prycontactos
             cadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../BD/contacto.accdb;";
 
         }
-
+       
+        
+         
+        
 
 
         public void listarproductos(DataGridView dgvGrilla)
@@ -71,30 +74,33 @@ namespace prycontactos
 
         }
 
-        public void agregar(string nombre,string apellido,string telefono,string correo,string categoria)
+        public void agregar(string nombre, string apellido, string telefono, string contacto, string correo, string categoria)
         {
             using (OleDbConnection connection = new OleDbConnection(cadena))
             {
-                string query = "INSERT INTO contactos(nombre,apellido,telefono,categoria)VALUES(?,?,?,?,?)";
+                string query = "INSERT INTO contactos(nombre, apellido, telefono, contacto, correo, categoria) VALUES (?, ?, ?, ?, ?, ?)";
                 using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@apellido", apellido);
                     command.Parameters.AddWithValue("@telefono", telefono);
+                    command.Parameters.AddWithValue("@contacto", contacto);
                     command.Parameters.AddWithValue("@correo", correo);
-                    command.Parameters.AddWithValue("@categoria",categoria);
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@categoria", categoria);
 
-
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {                       
+                        Console.WriteLine("Ocurrió un error: " + ex.Message);
+                    }
                 }
-
-
             }
-
-
         }
-           
+
         public void eliminar(contacto contacto)
         {
             try
@@ -107,7 +113,8 @@ namespace prycontactos
                 comando.CommandText = $"DELETE FROM contactos WHERE Nombre='{contacto.nombre}'";
 
                 conexion.Open();
-                comando.ExecuteNonQuery();
+       
+               comando.ExecuteNonQuery();
 
 
 

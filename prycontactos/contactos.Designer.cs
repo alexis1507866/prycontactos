@@ -47,7 +47,7 @@
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 72);
+            this.label2.Location = new System.Drawing.Point(12, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
@@ -74,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 98);
+            this.label3.Location = new System.Drawing.Point(13, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
@@ -83,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 38);
+            this.label4.Location = new System.Drawing.Point(246, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 10;
@@ -92,7 +92,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 72);
+            this.label5.Location = new System.Drawing.Point(246, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 4;
@@ -101,7 +101,7 @@
             // lblcategoria
             // 
             this.lblcategoria.AutoSize = true;
-            this.lblcategoria.Location = new System.Drawing.Point(254, 105);
+            this.lblcategoria.Location = new System.Drawing.Point(238, 108);
             this.lblcategoria.Name = "lblcategoria";
             this.lblcategoria.Size = new System.Drawing.Size(51, 13);
             this.lblcategoria.TabIndex = 5;
@@ -127,7 +127,7 @@
             // cmdcategoria
             // 
             this.cmdcategoria.FormattingEnabled = true;
-            this.cmdcategoria.Location = new System.Drawing.Point(319, 105);
+            this.cmdcategoria.Location = new System.Drawing.Point(297, 105);
             this.cmdcategoria.Name = "cmdcategoria";
             this.cmdcategoria.Size = new System.Drawing.Size(145, 21);
             this.cmdcategoria.TabIndex = 10;
@@ -135,7 +135,7 @@
             // 
             // msktelefono
             // 
-            this.msktelefono.Location = new System.Drawing.Point(321, 31);
+            this.msktelefono.Location = new System.Drawing.Point(297, 31);
             this.msktelefono.Name = "msktelefono";
             this.msktelefono.Size = new System.Drawing.Size(143, 20);
             this.msktelefono.TabIndex = 3;
@@ -143,9 +143,9 @@
             // 
             // mskcoreo
             // 
-            this.mskcoreo.Location = new System.Drawing.Point(319, 72);
+            this.mskcoreo.Location = new System.Drawing.Point(301, 72);
             this.mskcoreo.Name = "mskcoreo";
-            this.mskcoreo.Size = new System.Drawing.Size(143, 20);
+            this.mskcoreo.Size = new System.Drawing.Size(139, 20);
             this.mskcoreo.TabIndex = 4;
             this.mskcoreo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskcoreo_MaskInputRejected);
             // 
@@ -159,6 +159,7 @@
             // 
             // dgvGrilla
             // 
+            this.dgvGrilla.BackgroundColor = System.Drawing.SystemColors.Highlight;
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
@@ -166,6 +167,7 @@
             this.telefono,
             this.correo,
             this.categoria});
+            this.dgvGrilla.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvGrilla.Location = new System.Drawing.Point(0, 183);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(501, 150);
@@ -199,27 +201,30 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(123, 137);
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAgregar.Location = new System.Drawing.Point(86, 137);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(241, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "editar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEditar.Location = new System.Drawing.Point(216, 137);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 7;
+            this.btnEditar.Text = "editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(387, 137);
+            this.button3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.button3.Location = new System.Drawing.Point(343, 137);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -231,9 +236,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(513, 339);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.mskcontacto);
@@ -273,7 +279,7 @@
         private System.Windows.Forms.MaskedTextBox mskcontacto;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;

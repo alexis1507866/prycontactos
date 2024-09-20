@@ -22,7 +22,7 @@ namespace prycontactos
            
         }
         conexionBD Conexion = new conexionBD();
-         
+
 
         private void contactos_Load(object sender, EventArgs e)
         {
@@ -43,13 +43,27 @@ namespace prycontactos
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+      
            
-           
+            
+
+            
+        
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string nombre = txtNombre.Text;
+            string apellido = txtapellido.Text;
+            string telefono = msktelefono.Text;
+            string contacto = mskcontacto.Text;
+            string correo = mskcoreo.Text;
+            string categoria = cmdcategoria.Text;
+            Conexion.agregar(nombre, apellido, telefono, contacto, correo, categoria);
+         
 
 
         }
@@ -70,17 +84,13 @@ namespace prycontactos
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            string msk = msktelefono.Text;
-            msktelefono.Text = msk;
-            mskcoreo.Text = msk;
+            
 
         }
 
         private void txttexto_TextChanged(object sender, EventArgs e)
         {
-            string text = txtNombre.Text;
-            txtNombre.Text = text;
-            txtNombre.Clear();
+            
             
             
             
@@ -101,8 +111,7 @@ namespace prycontactos
 
         private void txtapellido_TextChanged(object sender, EventArgs e)
         {
-            string text = txtapellido.Text;
-            txtapellido.Clear();
+           
            
         }
 
